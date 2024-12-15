@@ -33,6 +33,90 @@
     </style>
   </head>
   <body>
+    <!-- mobile menu  -->
+    <div
+      class="w-full h-screen bg-gray-500 fixed inset-0 text-white z-50 p-8 xl:hidden hidden"
+      id="menu"
+    >
+      <!-- close button  -->
+      <span
+        class="absolute top-4 right-4 cursor-pointer hover:text-red-500"
+        id="close-btn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </span>
+      <!-- close button  -->
+
+      <div
+        class="flex flex-col gap-5 max-w-[1140px] w-full mx-auto *:border-b-2"
+      >
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >HOME</a
+        >
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >ABOUT US</a
+        >
+
+        <!-- Products Dropdown -->
+        <div class="relative group">
+          <button
+            class="hover:text-green-300 transition-colors font-semibold focus:outline-none"
+            id="products-btn"
+          >
+            PRODUCTS
+          </button>
+          <!-- Dropdown Menu -->
+          <div
+            id="products-dropdown"
+            class="absolute left-24 top-2 z-50 hidden group-hover:block bg-white text-black py-2 shadow-lg w-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-[#347A2A] transition-colors hover:text-white font-semibold"
+              >Product 1</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-[#347A2A] transition-colors hover:text-white font-semibold"
+              >Product 2</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-[#347A2A] transition-colors hover:text-white font-semibold"
+              >Product 3</a
+            >
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >OUR ACHIEVEMENT</a
+        >
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >COMPANY PROFILE</a
+        >
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >CONTACT US</a
+        >
+        <a href="#" class="hover:text-green-300 transition-colors font-semibold"
+          >WEBMAIL</a
+        >
+      </div>
+    </div>
+    <!-- mobile menu  -->
+
     <!-- navbar  -->
     <nav class="bg-white w-full">
       <!-- top bar  -->
@@ -85,11 +169,13 @@
 
         <div class="flex items-center gap-4 justify-between w-full py-7">
           <div class="w-full">
+            <!-- logo -->
             <img
               src="../assets/logo.png"
               alt="logo"
               class="w-64 flex-1 block"
             />
+            <!-- logo -->
           </div>
           <div class="xl:flex items-center gap-3 w-full hidden">
             <img src="../assets/mail.svg" class="w-8" alt="mail icon" />
@@ -124,9 +210,10 @@
 
         <!-- right  -->
         <!-- menu  -->
-        <div class="xl:hidden">
+        <div class="xl:hidden" id="menuIcon">
           <img src="../assets/menu.svg" class="w-8 cursor-pointer" alt="" />
         </div>
+        <!-- menu  -->
         <!-- right  -->
       </div>
 
@@ -224,7 +311,7 @@
           <!-- Dropdown Menu -->
           <div
             id="products-dropdown"
-            class="absolute hidden group-hover:block bg-white text-black py-2 shadow-lg w-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            class="absolute z-50 hidden group-hover:block bg-white text-black py-2 shadow-lg w-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
           >
             <a
               href="#"
@@ -466,5 +553,17 @@
         },
       });
     </script>
+
+    <script>
+      document.getElementById("menuIcon").addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+      });
+
+      document.getElementById("close-btn").addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+      });
+    </script>
+
+    <script src="./app.js"></script>
   </body>
 </html>
