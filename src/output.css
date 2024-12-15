@@ -759,6 +759,10 @@ video {
   place-content: center;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-end {
   align-items: flex-end;
 }
@@ -801,6 +805,10 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
